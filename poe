@@ -1,0 +1,311 @@
+
+
+Projet « Plan de test »
+
+Table des matières
+Historique des versions du document	2
+Objectifs du document	2
+Glossaire	2
+Contexte du projet « Plan de test »	3
+Déroulement du projet de développement	3
+Approche de test	4
+Vos objectifs	4
+Interactions avec l’équipe de DEV	4
+Enoncés du projet « Plan de test »	6
+Documentation à disposition	6
+Exigences pour la réalisation des livrables	6
+Livrables à produire	6
+Planning de livraison de livrables	7
+Backlog de l’itération #02	8
+Annexes	13
+Modèle de plan de test	13
+Modèle de matrice RACI	13
+Traitement de nuit « gestion des stocks »	13
+
+
+ 
+Historique des versions du document
+
+Versions	Dates	Remarques	Auteur
+V01	01/12/2025	Version initiale	François
+V02	02/12/2025	Complément de spécifications des US #04, #05, #06 et #07 – cf. section « Backlog de l’itération #02	François
+V1	04/12/2025	-	Toutes les US sont qualifiées d’une valeur métier
+-	US01 : énoncé corrigé
+-	US07 « remises » complétée
+-	US08 et UST09 « backoffice STOCK » détaillées
+-	Ajout d’une annexe : « Traitement de nuit gestion des stocks »
+	François
+
+Objectifs du document
+
+Le document fournit le cadre pour le déroulement de votre projet « Plan de test » de fin de parcours.
+Il présente 2 natures d’informations :
+-	Le contexte et les éléments pour le déroulement sur les 4 journées planifiées – cf. la section « Contexte du projet Plan de test »
+-	Les entrants pour la réalisation de vos activités – cf. la section « Enoncés du projet Plan de test »
+
+Glossaire
+Précisions sur certains termes utilisés dans le document :
+-	« Projet Plan de test » :
+o	C’est votre projet dans le cadre du POE
+
+-	« Projet de développement »
+o	Le projet de développement simulé que vous intégrez en tant que QA
+
+-	« Plateforme »
+o	Représente la structure du site de ventes en ligne et tous ses formulaires de saisie et affichage à disposition de futurs internaute-acheteurs, soit le « FrontOffice »
+
+-	« Equipe »
+o	L’équipe Agile en charge du développement et du test de la plateforme
+
+Contexte du projet « Plan de test »
+
+Déroulement du projet de développement
+Le projet « Plan de test » simule le déroulement d’un projet de développement pour une nouvelle plateforme de ventes en ligne.
+Vous rejoignez, en tant que QA, l’équipe de DEV Agile en charge du développement de la plateforme.
+2 itérations ont déjà été réalisées :
+-	IT-00 – faisant office de planification de la release V1 de la plateforme – pour :
+o	Réaliser les choix techniques en vue de la future solution concernant le FrontOffice et le BackOffice
+o	Mettre en place l’architecture de développement et de test.
+-	IT-01 pour développer un premier lot d’US du backlog produit :
+o	US fonctionnelles :
+	Développement de la structure de navigation dans la plateforme
+	Développement des fonctions et services pour :
+•	La gestion des comptes client par les internautes
+•	L’authentification d’un internaute à la plateforme
+•	La réinitialisation du mot de passe d’authentification par un internaute
+o	US techniques
+	Réalisation de la structure de la base de données « Ventes en Ligne »
+	Adaptation de la base de données TIERS de l’entreprise au regard de l’impact de l’apparition d’un nouveau type de client pour l’entreprise – TYPE_CLIENT = « Internaute »
+
+Approche de test
+Les éléments suivants de stratégie de test ont été décidés en IT00 :
+-	L’équipe suit les principes d’assurance qualité énoncés par les quadrants des tests
+-	L’incrément d’une itération donnée complète les incréments produits lors de itérations précédentes ; c’est-à-dire que le niveau de qualité du produit obtenu à la fin d’une itération N ne doit pas être impacté par les itérations suivantes N+1, N+2… ; chaque itération doit ainsi exposer la formalisation d’un périmètre de test de régression.
+-	Les référentiels de test – exigences et cas de test – ainsi que les campagnes d’exécution des tests sont spécifiées dans l’outil de gestion Squash TM.
+-	Chaque itération doit être pilotée par des Definition of Done (DOD) qui doivent exprimer le niveau de qualité attendu pour l’incrément de l’itération considérée.
+-	Des besoins et exigences du projet de DEV montre des impacts sur des composants déjà existants dans le système l‘informations de l’entreprise ; il est donc indispensable que le niveau de qualité de ces composants ne soit pas impacté par le projet en cours.
+
+Vos objectifs
+En considérant que vous réalisez l’étape de planification de l’itération #02, vos responsabilités seront de :
+-	Compléter le plan de test de l’itération #02
+-	Préparer le périmètre de test de l’itération #02
+-	Concevoir les référentiels de test – exigences et cas de test
+-	Préparer des campagnes d’exécution de test fonctionnels
+
+Interactions avec l’équipe de DEV
+Votre interlocuteur privilégié est le PO du projet de développement.
+Un daily meeting est planifié tous les matins à partir du 04 décembre, pour :
+o	Faire un point d’avancement sur la production des livrables attendus du projet « Plan de test »
+o	Echanger sur les difficultés rencontrées la veille ou celles qui pourrez survenir dans la journée
+Vous pourrez aussi interpeler le PO à tout moment des 4 journées du projet – 04, 05, 08 et 09 décembre – pour des ateliers personnalisés, pour cela :
+o	Vous lui adresserez une notification dans le salon Discord « projet-plan-de-test »
+o	Il vous recontacte alors pour planifier rapidement un atelier
+
+
+ 
+Enoncés du projet « Plan de test »
+Documentation à disposition
+A partir des besoins et exigences exprimés par le METIER et complétés par la MOE, le PO a initié le backlog du produit sous forme de user stories.
+Ces US, qui vous servirons de base de test sont spécifiées dans la section « Backlog de l’itération #02 ».
+
+Exigences pour la réalisation des livrables
+Les contenus de vos livrables devront être justifiés en expliquant comment et à partir de quelles informations vous avez réalisé vos tâches et complété le livrable considéré.
+Ces justifications seront reportées dans un document que vous commenterez lors de votre soutenance.
+
+Livrables à produire
+Dans le cadre de votre projet « Plan de test », vous devrez produire les livrables suivants :
+•	Le plan de test de l’itération #02 en renseignant principalement les sections suivantes – cf. le modèle fourni en Annexe du document :
+o	Section 4     : Le périmètre de test et caractéristiques à tester et/ou à ne pas tester
+Les caractéristiques à tester couvrant les US de valeur métier « HAUTE » devront être accompagnées d’une estimation de risque PRODUIT
+o	Section 6     : Une matrice de responsabilités sur les activités de test – modèle de matrice fournie en annexe du document
+o	Section 7.1 : Les critères de sortie, pour y spécifier les DOD de l’itération 2
+o	Section 8     : Des éléments de spécification en vue de la préparation des environnements de test
+•	Spécifier les exigences et les cas de test formels ainsi que les éventuelles chartes de test dans Squash ; en tant que détails de la section 4 du plan de test
+•	Spécifier une campagne de test SYSTEME et une campagne de test UAT dans Squash
+•	Votre support de soutenance
+
+Planning de livraison de livrables
+Vos livrables, par groupe, devront être déposés dans le dossier Dendréo « Projet Fil Rouge / Projet Plan de test / Votre Groupe » au plus tard à 18h00 le 09 décembre.
+ 
+Backlog de l’itération #02
+Enumération des US à implémenter dans le cadre de l’itération #02.
+ID.	Description et critères d’acception	Valeur métier
+US01	En tant que
+-	Internaute authentifié sur la plateforme
+Je souhaite
+-	Avoir accès à l’espace « Mes commandes » depuis la page « Mon compte »
+Afin de
+-	Avoir accès à l’historique de toutes mes commandes réalisées
+
+Critères d’acceptation :
+-	CA01 : à l’activation du choix « Mes commandes » depuis la page « Mon compte » ,le système affiche toutes les commandes passées pour l’internaute connecté, triées par ordre décroissant de la date de la commande.
+-	CA02 : la liste contient les informations suivantes de la commande : date, numéro, montant payé, statut
+-	CA03 : en cliquant sur le numéro de la commande, le système affiche dans un autre formulaire le détail de la commande : désignation des articles avec leur prix unitaire et quantité commandée
+	Moyenne
+US02	En tant que
+-	Internaute authentifié sur la plateforme
+Je souhaite
+-	Pouvoir sauvegarder mon panier en cours
+Afin de
+-	De le confirmer plus tard lors d’une prochaine connexion à la plateforme
+
+Critères d’acceptation :
+-	CA01 : un panier sauvegardé pourra être réactivé par le même internaute pendant un délai de 8 jours.
+-	CA02 : les paniers sauvegardés non réactivés après un délai de 8 jours sont supprimés de la base de données.
+-	CA03 : un internaute peut sauvegarder 1 seul panier
+-	CA04 : si un internaute sauvegarde un panier, il est notifié par mail la veille du délai de 8 jours que son panier ne sera plus disponible après le délai de 8 jours, en précisant cette date de fin d’activation du panier
+-	CA05 : quand un internaute confirme la sauvegarde de son panier en cours, la date de fin d’activation du panier lui est précisée.
+
+
+
+
+
+
+
+
+	Moyenne
+US03	En tant que
+-	Internaute authentifié sur la plateforme
+Je souhaite
+-	Ajouter des articles dans mon panier, à partir de la page « Boutique »
+Afin de
+-	D’en confirmer leur commande
+
+Critères d’acceptation :
+-	CA01 : l’internaute peut sélectionner des articles par code article
+-	CA02 : l’internaute peut sélectionner des articles par mots clés de la désignation de l’article
+-	CA03 : l’internaute peut sélectionner des articles par catégorie d’articles en naviguant dans la structure de catégorisation des articles – structure à confirmer avec l’équipe Marketing
+-	CA04 : l’internaute peut sélectionner des articles via des filtres – désignation des filtres à confirmer avec l’équipe Marketing
+-	CA05 : les articles sélectionnés par l’internaute sont issus de la base ARTICLES de l’entreprise
+-	CA06 : la liste des articles sélectionnés par l’internaute affiche : la désignation de l’article, le prix unitaire TTC, une photo, un lien pour afficher le détail complet de l’article dans une fenêtre de type popup, un flag indiquant la disponibilité de l’article, un lien « +1 »
+-	CA07 : dans la liste des articles, quand un article est disponible en stock le lien « +1 » est ACTIF et de couleur verte sinon le lien est INACTIF et de couleur rouge
+-	CA08 : dans la liste des articles, quand l’internaute active le lien « + 1 » le système ajoute l’article considéré dans le panier en cours de l’internaute
+-	CA09 : un lien INACTIF et de couleur rouge ne doit pas permettre à l’internaute d’ajouter l’article considéré dans son panier
+-	CA10 : Chaque ajout d’un nouvel article incrémente de 1 le nombre d’articles du panier
+	Haute
+US04	En tant que
+-	Internaute authentifié sur la plateforme
+Je souhaite
+-	Supprimer un article enregistré dans mon panier
+Afin de
+-	De le retirer de ma commande en cours
+
+Critères d’acceptation :
+-	CA01 : en activant le lien « Mon panier », l’internaute accède au contenu de son panier dans le formulaire « Mon panier »; le système affiche les informations suivantes : la désignation de l’article, le prix unitaire TTC, la quantité commandée, un lien « -1 »
+-	CA02 : en activant le lien « -1 », l’internaute peut supprimer un article de son panier ; le système demande alors confirmation à l’internaute ; si la demande est confirmée, alors le système décrémente la quantité commandée pour le produit considéré
+-	CA03 : si la quantité totale d’articles commandés est égale à zéro, alors le système informe l’internaute que son panier est supprimé
+	Haute
+US05	En tant que
+-	Internaute authentifié sur la plateforme
+Je souhaite
+-	Confirmer la commande du contenu de mon panier
+Afin de
+-	Afin d’en réaliser le paiement
+
+Critères d’acceptation :
+-	CA01 : pour être confirmé, le panier doit contenir au moins 1 article
+-	CA02 : à partir du formulaire « Mon panier », l’internaute active le bouton « Confirmer le panier », le système affiche alors le montant total de la commande, les remises éventuelles déduites et le montant net à payer, et le système rend actif le bouton « Réaliser mon paiement »
+-	CA03 : si le panier ne contient pas d’article (zéro article), alors le système ne doit pas permettre d’afficher le formulaire « Mon Panier »
+	Haute
+US06	En tant que
+-	Internaute authentifié sur la plateforme
+Je souhaite
+-	Réaliser le paiement par carte bancaire (CB) de mon panier
+Afin de
+-	Me faire livrer les articles commandés dans mon panier
+
+Critères d’acceptation :
+-	CA01 : quand l’internaute active le bouton « Réaliser mon paiement », le système vérifie qu’une adresse de livraison est renseignée dans le profil de l’internaute
+-	CA02 : en cas d’absence d’adresse de livraison, le système affiche un message en mode popup pour que l’internaute renseigne cette adresse et un lien actif pour atteindre le formulaire « Mon Profil » et l’espace « adresse de livraison »
+-	CA03 : pour réaliser son paiement par CB, l’internaute renseigne les zones de saisie : « numéro carte », « date expiration », « code de sécurité » ; le système rend alors actif le bouton « Confirmer paiement CB »
+-	CA04 : le système enregistre le paiement de l’internaute au retour de la vérification approuvée des données carte bancaire via l’API ; ces données sont enregistrées dans la base de données de la plateforme : ID de l’internaute, date SYS du paiement, données ARTICLES (code, quantités commandées), montant total TTC de la commande, montant des remises, montant net payer TTC
+-	CA05 : si le retour de l’API n’est pas approuvé, alors le système affiche le message de l’API et réinitie à « blanc » les zones de saisie des coordonnées de CB afin que l’internaute réalise à nouveau son paiement CB
+
+
+
+
+
+
+
+	Haute
+US07	En tant que
+-	Internaute authentifié sur la plateforme
+Je souhaite
+-	Profiter de remises commerciales attribuées selon certaines conditions – cf. les critères d’acceptation ci-dessous
+Afin de
+-	Que le montant de ces remises soit déduit du montant total de ma commande
+
+Critères d’acceptation :
+-	CA01 : Si l’internaute est inscrit depuis plus de 6 mois et qu’il a déjà réalisé 3 commandes pour un montant total de 300 € alors une remise de 10 % est calculée sur le montant total de sa commande en cours
+-	CA02 : Si l’internaute réalise sa 1ère commande est qu’il réside dans un des départements de la liste « Départements du mois », alors une remise de 5 % est calculée sur le montant total de sa commande en cours
+-	CA03 : Si l’internaute est inscrit depuis plus de 12 mois, qu’il a déjà réalisé pour au moins 500 € d’achats et qu’il est profil « VIP », une remise de 7 % est calculée sur le montant total de sa commande en cours
+-	CA04 : Si l’internaute a réalisé plus de 10 commandes dans l’année en cours, une remise de 5 % est calculée sur le montant total de sa commande en cours
+-	CA05 : Si l’internaute renseigne un code PROMO lors de la confirmation de son panier, alors le système lui attribue le taux de remise associé au code PROMO renseigné
+
+-	CA06 : les remises attribuées ne sont pas cumulables ; c’est-à-dire qu’un seul montant de remise peut être déduit du montant total des articles commandés
+-	CA07 : Si l’internaute utilise un code PROMO pour profiter de la remise associée à ce code PROMO, alors cette remise est prioritaire sur les autres cas spécifiés dans la CA 01, 02, 03 et 04
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Haute
+US08	En tant que
+-	Système de gestion des STOCKS
+Je souhaite
+-	Que toutes les données d’achat d’un internaute soient transmises dans mon système
+Afin de
+-	Gérer les stocks pour les articles commandés et payés par les internautes
+
+Critères d’acceptation :
+-	CA01 : le système transmet les données d’achat d’une journée vers la gestion des STOCKS ; une journée se définit par la tranche horaire de 00h00 J0 à 00h00 J0+1, appelée « journée calendaire »
+-	CA02 : les données à transférer doivent contenir pour les produits achetés en J0 : les codes ARTICLE des produits achetés, le total des quantités commandées en J0 pour le produit considéré
+-	CA03 : la gestion des stocks doit pouvoir traiter les données issues de la plateforme sans impact pour ses processus METIER
+
+	Haute
+UST09	En tant que
+-	Système d’informations de l’entreprise (SI)
+Je souhaite
+-	Que la plateforme de ventes en ligne communique avec la gestion de STOCKS du SI
+Afin de
+-	De transmettre les données d’achat d’articles depuis la plateforme vers la gestion des stocks
+
+Critères d’acceptation :
+-	CA01 : la base de données (BdD) de la plateforme stocke distinctement les données d’achat d’une journée calendaire
+-	CA02 : un traitement de nuit – décrit en annexe – journalier récupère ces données pour les transmettre à la gestion de stocks
+-	CA03 : après le traitement de toutes les données, le traitement de nuit produit un rapport de synthèse de ses actions réalisées pour y spécifier la liste des articles transférés et leur quantité totale par article
+	Haute
+
+ 
+Annexes
+Modèle de plan de test
+Disponible dans le dossier Dendréo « Projet Fil Rouge / Projet Plan de test / Modèles de document ».
+
+Modèle de matrice RACI
+Disponible dans le dossier Dendréo « Projet Fil Rouge / Projet Plan de test / Modèles de document ».
+
+Traitement de nuit « gestion des stocks »
+Contexte fonctionnel :
+-	Ce traitement de nuit, de type BATCH, couvre l’interface des données entre la plateforme et la gestion des stocks du SI
+Contexte technique :
+-	Il doit réaliser les opérations suivantes :
+o	Récupérer dans la base de données de la plateforme les données pour la journée en cours, soit : date des données d’achat = date système
+o	Mettre à jour ces données dans la gestion des stocks du SI
+o	Indiquer l’horodatage complet (JJ/MM/AAA et HH :MN :S) et le nom du traitement pour les données d’achat interfacées, dans le base de données de la plateforme
+o	Produire un rapport de synthèse
+-	Il sera inséré dans le planning journalier des traitements BATCH – cf. l’équipe DSI opérationnelle

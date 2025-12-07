@@ -1,0 +1,68 @@
+A. Installation et caractéristiques du SUT:
+1.	Installer Docker client
+2.	Dézipper le projet
+https://drive.google.com/drive/folders/1jht7RkMQQUgw4V__M4eNWvEAI0P50tDS?usp=sharing
+Lancement
+1. Démarrer les conteneurs
+Dans un terminal à la racine du projet, lancer la commande:
+(Il faut que docker desktop soit lancé)
+
+docker compose up -d
+
+
+2. Initialiser la base Django
+(Dans un terminal à la racine du projet, lancer la commande: )
+
+docker compose exec web python manage.py migrate
+docker compose exec web python manage.py loaddata ./sql/data.json
+docker compose exec web python manage.py createsuperuser
+
+(créez un profil sans email. Il servira pour se connecter au moment du paiement du panier)
+URLs des services
+
+
+Service 	Adresse 	Détails
+Site Django	http://localhost:8000	Site e-commerce
+Adminer 	http://localhost:8080	Outil SQL Web
+Interface Admin Django	http://localhost:8000/admin	Connexion via superuser
+Connexion BDD
+
+URI:         : localhost:5432
+Système      : PostgreSQL
+Serveur      : db
+Utilisateur  : ecommerce
+Mot de passe : ecommerce
+Base         : ecommerce
+
+Arrêt du projet
+
+docker compose down
+Suppression complète (conteneurs + volumes + images)
+
+docker compose down -v --rmi all
+
+B. Le projet de test automatisé
+Consignes
+
+Django Ecommerce est un site web, il est donc nécessaire de le tester avec un framework de test adapté aux test par l’interface graphique. (Behave / Selenium, Robot Framework / Selenium)
+Créez un projet de test automatisé en python qui va dans ce sens
+Le scénario de test automatisé
+Notre SUT sera le site Django Ecommerce, que vous lancerez en local sur la machine de test.
+●	Notre objectif de test sera la fonctionnalité panier.
+●	Le scénario devra faire en sorte de :
+●	Se connecter avec le profil superuser  que vous aurez créé lors de l’initialisation de la base. (vous pouvez aussi créer un profil via la console adminer, mais n’automatisez pas la création de profil)
+●	Ajouter un article de chaque catégorie disponible dans le panier, sauf le sac en cuir noir il enfaut deux dans le panier.
+(les filtres et options de tri ne sont pas actifs, n’automatisez pas ces fonctionnalités)
+●	Valider que le contenu du panier est bien celui que vous avez programmé, et que les montants sont cohérents.
+(un bug à l’affichage a décalé les colonnes du tableau, ne pas en tenir compte)
+●	Remplissez une adresse dans le formulaire de checkout, sélectionner paiement par carte bancaire
+●	Le site ne fonctionne pas au-delà de la page ou l’on remplit les informations de carte bancaire. Remplissez ce dernier formulaire.
+Bonnes pratiques
+Essayez de pousser un maximum des bonnes pratiques de codage et de test automatisé dans votre projet, notamment le page object design pattern
+
+Contexte de test
+La base de données dockerisée qui alimente Django est accessible depuis votre localhost:5432, quand l’image docker est UP.
+(La base de données à la racine du projet Django ne sert qu’à construire l’image docker, ça ne sert à rien de s’y connecter)
+Les tests automatisés doivent être indépendants les uns des autres et répétables. Les tables CORE_ORDER, CORE_ORDER_ITEMS et CORE_ORDERITEM gèrent le contenu du panier. Soit vous les nettoyez dans le setup, soit dans le teardown des tests.
+
+Vous pouvez créer un contexte différemment si vous le souhaitez. Par exemple en appelant docker compose up avant le test, et docker  compose down dans le teadown
