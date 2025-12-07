@@ -1,29 +1,50 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+from pages.remise_page import RemisePage
 
 def test_remise_10_pourcent():
-    # Préparer un utilisateur avec ancienneté et commandes
-    pass
+    driver = webdriver.Chrome()
+    page = RemisePage(driver)
+    page.appliquer_remise_anciennete()
+    remise = page.get_remise_appliquee()
+    assert remise == 0.10
+    driver.quit()
 
 def test_remise_5_pourcent_premiere_commande():
-    # Préparer un utilisateur 1ère commande et département du mois
-    pass
+    driver = webdriver.Chrome()
+    page = RemisePage(driver)
+    page.appliquer_remise_premiere_commande()
+    remise = page.get_remise_appliquee()
+    assert remise == 0.05
+    driver.quit()
 
 def test_remise_7_pourcent_vip():
-    # Préparer un utilisateur VIP
-    pass
+    driver = webdriver.Chrome()
+    page = RemisePage(driver)
+    page.appliquer_remise_vip()
+    remise = page.get_remise_appliquee()
+    assert remise == 0.07
+    driver.quit()
 
 def test_remise_5_pourcent_10_commandes():
-    # Préparer un utilisateur avec 10 commandes
-    pass
+    driver = webdriver.Chrome()
+    page = RemisePage(driver)
+    page.appliquer_remise_10_commandes()
+    remise = page.get_remise_appliquee()
+    assert remise == 0.05
+    driver.quit()
 
 def test_remise_code_promo_prioritaire():
-    # Préparer un utilisateur avec code promo
-    pass
+    driver = webdriver.Chrome()
+    page = RemisePage(driver)
+    page.appliquer_code_promo()
+    remise = page.get_remise_appliquee()
+    assert remise == "PROMO"
+    driver.quit()
 
 def test_remises_non_cumulables():
-    # Préparer un utilisateur avec plusieurs conditions
-    pass
-
+    driver = webdriver.Chrome()
+    page = RemisePage(driver)
+    page.appliquer_remise_prioritaire()
+    remise = page.get_remise_appliquee()
+    assert remise is not None
+    driver.quit()
