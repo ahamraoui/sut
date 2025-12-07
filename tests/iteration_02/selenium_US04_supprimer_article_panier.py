@@ -3,7 +3,7 @@ from pages.panier_page import PanierPage
 
 def test_supprimer_article_panier():
     driver = webdriver.Chrome()
-    driver.get("https://votre-plateforme/mon-panier")
+    driver.get("http://localhost:8000/mon-panier")
     page = PanierPage(driver)
     articles = page.get_articles()
     assert len(articles) > 0

@@ -3,7 +3,7 @@ from pages.paiement_page import PaiementPage
 
 def test_paiement_cb_valide():
     driver = webdriver.Chrome()
-    driver.get("https://votre-plateforme/paiement")
+    driver.get("http://localhost:8000/paiement")
     page = PaiementPage(driver)
     page.enter_cb_info("4111111111111111", "12/27", "123")
     page.confirm_payment()
@@ -13,7 +13,7 @@ def test_paiement_cb_valide():
 
 def test_paiement_cb_sans_adresse():
     driver = webdriver.Chrome()
-    driver.get("https://votre-plateforme/paiement")
+    driver.get("http://localhost:8000/paiement")
     page = PaiementPage(driver)
     popup = page.get_popup_adresse()
     assert popup.is_displayed()
@@ -23,7 +23,7 @@ def test_paiement_cb_sans_adresse():
 
 def test_paiement_cb_refuse():
     driver = webdriver.Chrome()
-    driver.get("https://votre-plateforme/paiement")
+    driver.get("http://localhost:8000/paiement")
     page = PaiementPage(driver)
     page.enter_cb_info("0000000000000000", "01/20", "000")
     page.confirm_payment()

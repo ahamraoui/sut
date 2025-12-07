@@ -3,7 +3,7 @@ from pages.boutique_page import BoutiquePage
 
 def test_ajout_article_par_code():
     driver = webdriver.Chrome()
-    driver.get("https://votre-plateforme/boutique")
+    driver.get("http://localhost:8000/boutique")
     page = BoutiquePage(driver)
     page.search_article("CODE123")
     articles = page.get_articles()
@@ -14,7 +14,7 @@ def test_ajout_article_par_code():
 
 def test_ajout_article_par_mot_cle():
     driver = webdriver.Chrome()
-    driver.get("https://votre-plateforme/boutique")
+    driver.get("http://localhost:8000/boutique")
     page = BoutiquePage(driver)
     page.search_article("chaussure")
     articles = page.get_articles()
@@ -25,7 +25,7 @@ def test_ajout_article_par_mot_cle():
 
 def test_ajout_article_indisponible():
     driver = webdriver.Chrome()
-    driver.get("https://votre-plateforme/boutique")
+    driver.get("http://localhost:8000/boutique")
     page = BoutiquePage(driver)
     page.search_article("ARTICLE_INDISPONIBLE")
     color = page.get_unavailable_btn_color()
